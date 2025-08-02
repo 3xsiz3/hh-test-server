@@ -1682,7 +1682,16 @@ transform: scale(1.2);
 
 /* Медиа-запрос для мобильных */
 @media (max-width: 768px) {
-  /* Показываем бургер */
+  body {
+    max-width: 375px;
+    margin: 0 auto;
+    font-family: "Ubuntu", Arial, sans-serif;
+    padding: 0 160px;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    color:#1A1A1A;
+}
   .burger_btn {
     display: block;
   }
@@ -1728,3 +1737,4 @@ transform: scale(1.2);
     width: 100%;
   }
 }
+

@@ -38,10 +38,11 @@ text-decoration: none;
     display:flex;
     margin-top: 38px;
     margin-left: 5px;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .first_navbar{
     display:flex;
-    margin-right: 110px;
 }
 
 .vne_draya{
@@ -54,7 +55,6 @@ text-decoration: none;
     gap: 40px;
     margin-top: 12px;
     margin-right: 130px;
-    flex-wrap: wrap;
 }
 
 .second_navbar a {
@@ -70,7 +70,6 @@ text-decoration: none;
 
 .third_navbar{
     display:flex;
-    flex-wrap: nowrap;
 }
 
 .icons_link{
@@ -205,7 +204,7 @@ transition: all 0.3s ease;
 .title_base{
     display:flex;
     margin-top: 120px;
-    margin-left: 456px;
+    justify-content: center;
 font-weight: 700;
 font-style: Bold;
 font-size: 50px;
@@ -1525,218 +1524,55 @@ color:#9166F0;
   transform: scaleX(1);
 }
 
-.icons_link_transform {
-transition: transform 0.5s ease;
-}
-.icons_link_transform:hover {
-transform: scale(1.2);
-}
-
-.burger_btn {
-  display: none;
-  position: fixed;
-  top: 20px;
-  right: 15px;
-  width: 30px;
-  height: 30px;
-  background: #000210;
-  border: 1px solid #FFFFFF;
-  border-radius: 4px;
-  cursor: pointer;
-  z-index: 1100;
-  padding: 3px 0;
-  box-sizing: border-box;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.burger_btn .burger_line {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: #FFFFFF;
-  border-radius: 2px;
-}
-
-/* Мобильное меню */
 .mobile_menu {
   display: none;
-  flex-direction: column;
-  background: #FFFFFF;
-  position: fixed;
-  top: 70px; /* чуть ниже бургер-кнопки */
-  right: 15px;
-  width: 375px;
-  height: 340px;
-  padding: 20px;
-  box-sizing: border-box;
-  z-index: 1050;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  justify-content: space-between;
-  font-family: Ubuntu, sans-serif;
+  background-color: #fff; /* или нужный фон */
+  padding: 10px 20px;
+  /* по желанию — позиционирование, ширина и т.п. */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Заголовок меню */
-.mobile_menu_header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
+/* Когда меню активно — показываем */
+.mobile_menu.active {
+  display: block;
 }
 
-.mobile_menu_logos {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.navbar_mobile {
+  display:none;
 }
 
-.vne_draya,
-.vectorhh,
-.vectorbim {
-  height: 40px;
-  object-fit: contain;
-}
-
-/* Логотип bim под hh-soft */
-.first_second_navbar {
-  display: flex;
-  gap: 8px;
-}
-
-/* Крестик закрытия */
-.mobile_menu_close {
-  width: 30px;
-  height: 30px;
-  font-size: 24px;
-  background: #000210;
-  border: 1px solid #FFFFFF;
-  color: white;
-  line-height: 28px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 4px;
-  padding: 0;
-}
-
-/* Навигация */
-.mobile_menu_nav {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 130%;
-  text-align: center;
-}
-
-.mobile_menu_nav a {
-  color: #1A1A1A;
-  text-decoration: none;
-  padding: 10px 0;
-  transition: color 0.3s ease;
-}
-
-.mobile_menu_nav a:hover {
-  color: #9166F0;
-}
-
-/* Футер меню */
-.mobile_menu_footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mobile_menu_footer .tel {
-  font-weight: 300;
-  font-style: normal;
-  font-size: 14px;
-  color: #1A1A1A;
-  text-decoration: none;
-}
-
-/* Соцсети 40x40 */
-.mobile_social_icons {
-  display: flex;
-  gap: 15px;
-}
-
-.mobile_social_icons a {
-  color: #1A1A1A;
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease;
-}
-
-.mobile_social_icons a:hover {
-  color: #9166F0;
-}
-
-
-
-/* Медиа-запрос для мобильных */
 @media (max-width: 768px) {
   body {
-    max-width: 375px;
-    margin: 0 auto;
-    font-family: "Ubuntu", Arial, sans-serif;
-    padding: 0 160px;
-    background-color: #FFFFFF;
+    max-width: none;
+    margin: 0;
+    padding: 0; 
+    width: 100vw;
     overflow-x: hidden;
-    box-sizing: border-box;
-    color:#1A1A1A;
-}
-  .burger_btn {
-    display: block;
   }
 
-  /* Прячем основное меню */
-  .first_navbar,
-  .second_navbar,
-  .third_navbar {
-    display: none;
-  }
-
-  /* Показываем мобильное меню, когда оно активно - будем добавлять класс JS */
-  .mobile_menu.active {
-    display: flex;
-  }
-
-  /* При необходимости, стили фона и первого блока */
   .first_background {
     position: relative;
     z-index: 0;
-    height: 900px;
+    height: 100vh;
+    min-height: 500px;
+    width: 100vw;
+    left: 0;
+    margin: 0; 
+    padding: 0;
+    overflow: hidden;
   }
 
   .first_background::before {
     content: "";
     position: absolute;
-    top: -38px;
-    left: calc(-50vw + 50%);
+    top: 0;
+    left: 0;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     background-image: url("/img/background_mobile.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     z-index: -1;
   }
-
-  /* Прижимаем бегущую строку к низу */
-  .running_line {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
 }
-
-
-

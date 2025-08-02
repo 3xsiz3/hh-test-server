@@ -294,19 +294,8 @@ fetch('/html/navbar.html')
       .then(response => response.text())
   .then(html => document.getElementById('contaacts').innerHTML = html);
       
-//навбар для мобильной версии:
-  const burgerBtn = document.getElementById('burgerBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileMenuClose = document.getElementById('mobileMenuClose');
-
-  burgerBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('active');
-    burgerBtn.style.display = 'none';
-    mobileMenu.setAttribute('aria-hidden', 'false');
-  });
-
-  mobileMenuClose.addEventListener('click', () => {
-    mobileMenu.classList.remove('active');
-    burgerBtn.style.display = 'flex';
-    mobileMenu.setAttribute('aria-hidden', 'true');
-  });
+// + mobile navbar
+document.getElementById('burger-btn').addEventListener('click', function () {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('active');
+});

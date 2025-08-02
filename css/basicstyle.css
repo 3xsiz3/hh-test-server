@@ -1682,6 +1682,9 @@ transform: scale(1.2);
 
 /* Медиа-запрос для мобильных */
 @media (max-width: 768px) {
+    a {
+        color: black;
+    }
   body {
     max-width: 375px;
     margin: 0 auto;
@@ -1737,4 +1740,5 @@ transform: scale(1.2);
     width: 100%;
   }
 }
+
 

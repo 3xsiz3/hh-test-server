@@ -1744,7 +1744,7 @@ color:#9166F0;
   .mobile_menu .second_navbar a {
     text-align: center;
     width: 100%;
-    border-bottom: 1px solid #eee;
+    border-bottom: none;
     padding: 8px 0;
   }
 
@@ -1879,4 +1879,5 @@ margin-right: auto;
     margin-top: 13px;
     color: #d9d9d9;
   }
+
 }

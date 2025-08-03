@@ -1551,19 +1551,16 @@ color:#9166F0;
   }
 
   .first_background {
+     position: relative;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     background-image: url("/img/background_mobile.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    position: relative;
-    z-index: 0;
-    height: 100vh;
-    min-height: 500px;
-    width: 100vw;
-    left: 0;
-    margin: 0; 
-    padding: 0;
-    overflow: hidden;
   }
 
   .first_background::before {
@@ -1881,3 +1878,4 @@ margin-right: auto;
   }
 
 }
+

@@ -286,6 +286,30 @@ fetch('/html/navbar.html')
         }
       });
     }
+
+    // === ДОБАВЬТЕ ЭТО СЮДА ===
+    const submitBtnMobile = document.getElementById('submit-btn-mobile');
+    if (submitBtnMobile) {
+      submitBtnMobile.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalForm = modalOverlay.querySelector('.modal-form-window');
+        const modalThankYou = modalOverlay.querySelector('.modal-thank-you');
+
+        modalForm.classList.remove('show');
+        modalOverlay.style.display = 'flex';
+        modalThankYou.classList.add('show');
+        document.body.classList.add('modal-open');
+
+        // Сброс значений формы
+        const form = modalOverlay.querySelector('form');
+        if (form) {
+          form.reset();
+        }
+      });
+    }
+    // === КОНЕЦ ДОБАВЛЕНИЯ ===
   });
 
 
@@ -313,3 +337,44 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 // ...existing code...
+
+
+
+// +mobile cases menu
+document.addEventListener('DOMContentLoaded', function() {
+  // Мобильный выпадающий фильтр кейсов
+  const dropdownBtn = document.getElementById('mobile-cases-dropdown-btn');
+  const dropdownList = document.getElementById('mobile-cases-dropdown-list');
+  const options = document.querySelectorAll('.list_case_mobile_option');
+  const cases = document.querySelectorAll('.case_mobile');
+
+  if (dropdownBtn && dropdownList) {
+    dropdownBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      dropdownList.classList.toggle('active');
+    });
+
+    options.forEach(option => {
+      option.addEventListener('click', function() {
+        const filter = this.dataset.filter;
+        dropdownBtn.textContent = filter;
+        dropdownList.classList.remove('active');
+
+        cases.forEach(card => {
+          if (filter === 'Все работы' || card.dataset.type === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Закрытие по клику вне
+    document.addEventListener('click', function(e) {
+      if (!dropdownList.contains(e.target) && e.target !== dropdownBtn) {
+        dropdownList.classList.remove('active');
+      }
+    });
+  }
+});

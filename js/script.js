@@ -145,7 +145,7 @@ document.querySelectorAll('.list_case').forEach(button => {
       
       if (numberElement) {
         const targetNumber = parseInt(numberElement.textContent);
-        const duration = 1000; // Длительность анимации в мс
+        const duration = 3000; // Длительность анимации в мс
         const startTime = Date.now();
         
         numberElement.textContent = '0';
@@ -377,4 +377,5 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+
 });

@@ -1551,6 +1551,10 @@ color:#9166F0;
   }
 
   .first_background {
+    background-image: url("/img/background_mobile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     position: relative;
     z-index: 0;
     height: 100vh;
@@ -1563,17 +1567,7 @@ color:#9166F0;
   }
 
   .first_background::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("/img/background_mobile.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: -1;
+    display: none;
   }
   .navbar {
     display: none; /* Скрываем десктопный navbar */
@@ -1600,7 +1594,8 @@ color:#9166F0;
   .second_navbar_mobile {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    padding-top: 0;
+    margin-top: 0;
   }
 
   .btn_navbar_mobile {
@@ -1609,20 +1604,19 @@ color:#9166F0;
     font-size: 32px;
     color: #9166F0;
     cursor: pointer;
-    padding: 8px 0;
   }
 
   .mobile_menu {
     display: none;
     position: absolute;
-    top: 56px;
+    top: 0; /* чтобы меню было от самого верха */
     left: 0;
     width: 100vw;
     background: #fff;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     z-index: 100;
     padding: 24px 0 16px 0;
-    border-radius: 0 0 12px 12px;
+    border-radius: 0;
   }
 
   .mobile_menu.active {
@@ -1651,11 +1645,11 @@ color:#9166F0;
   }
 
   .mobile_menu .third_navbar {
-    flex-direction: row;
+    flex-direction: row-reverse;
     gap: 18px;
     margin: 0 24px;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
 
   .mobile_menu .icons_link {
@@ -1671,5 +1665,218 @@ color:#9166F0;
     color: #9166F0;
     font-size: 18px;
     font-weight: 700;
+  }
+
+  .close_mobile_menu {
+  position: absolute;
+  top: 20px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #9166F0;
+  cursor: pointer;
+  z-index: 101;
+  }
+
+  .tel {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color:#1A1A1A;
+  }
+  .second_navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+   .mobile_menu .second_navbar {
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto 16px auto !important;
+    width: 100%;
+  }
+  .mobile_menu .second_navbar a {
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+  }
+
+  /* Нижний блок: телефон+почта слева, иконки справа, между ними 83px */
+  .mobile_menu .third_navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 83px;
+    margin: 0 0 0 0;
+    width: 100%;
+  }
+  .mobile_menu .telephone {
+    margin-left: 15px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mobile_menu .icons_link {
+    margin-right: 15px !important;
+    gap: 10px !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .mobile_menu .second_navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto 16px auto;
+    width: 100%;
+  }
+  .mobile_menu .second_navbar a {
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+  }
+
+  .mobile_menu .third_navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+   justify-content: center;
+    gap: 83px;
+    width: 100%;
+    margin: 0;
+  }
+  .mobile_menu .telephone {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mobile_menu .icons_link {
+    margin-right: 15px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .navbar_mobile {
+    position: relative;
+  }
+  .second_navbar_mobile {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    z-index: 1;
+  }
+  .navbar_mobile {
+    padding: 0;
+  }
+  .frst_navbar_mobile {
+    padding: 0;
+  }
+  .navbar_mobile .first_navbar {
+    display: flex;
+    align-items: center;
+    margin-top: 23px;
+    margin-left: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .third_navbar {
+    display:flex;
+  margin-top: 40px !important;
+  }
+  .first__first_navbar {
+    margin-left: 15px;
+  }
+  .icons_link {
+    margin-bottom: 13px;
+  }
+  
+  .textaboutrost {
+    display:flex;
+    justify-content: center;
+font-weight: 700;
+font-style: Bold;
+font-size: 26px;
+line-height: 130%;
+letter-spacing: 0%;
+text-align: center;
+text-transform: uppercase;
+    width: 320px;
+  }
+
+  .second_first_menu {
+    margin-top: -60px !important;
+  }
+
+  .textaboutbim {
+    width: 345.0px;
+    color: #D9D9D9;
+    font-size: 14px;
+font-style: normal;
+font-weight: 300;
+line-height: 160%;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+  }
+  .twobutton {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .second_menu {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+  }
+  .second_first_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .running_line {
+    margin-top: 350px;
+  }
+  .textaboutbim {
+    margin-top: 40px;    /* 40px после .textaboutrost */
+    margin-bottom: 0;
+  }
+  .twobutton {
+    margin-top: 40px;    /* 40px после .textaboutbim */
+    margin-bottom: 0;
+  }
+  .firstbutton,
+  .secondbutton {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .first_background {
+  max-height: 900px;
+  }
+  .textaboutrost {
+    margin-bottom: 0;
+  }
+  .textaboutbim {
+    margin-top: 13px;
+    color: #d9d9d9;
   }
 }

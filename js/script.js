@@ -294,8 +294,22 @@ fetch('/html/navbar.html')
       .then(response => response.text())
   .then(html => document.getElementById('contaacts').innerHTML = html);
       
-// + mobile navbar
-document.getElementById('burger-btn').addEventListener('click', function () {
-  const menu = document.getElementById('mobile-menu');
-  menu.classList.toggle('active');
+//+ krestik
+// ...existing code...
+document.addEventListener('DOMContentLoaded', function() {
+  const burgerBtn = document.getElementById('burger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('close-mobile-menu');
+
+  if (burgerBtn && mobileMenu) {
+    burgerBtn.addEventListener('click', function() {
+      mobileMenu.classList.add('active');
+    });
+  }
+  if (closeBtn && mobileMenu) {
+    closeBtn.addEventListener('click', function() {
+      mobileMenu.classList.remove('active');
+    });
+  }
 });
+// ...existing code...
